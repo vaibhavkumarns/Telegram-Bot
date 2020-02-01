@@ -3,19 +3,18 @@ from datetime import datetime
 from firebase_admin import credentials
 from firebase_admin import db
 cred = credentials.Certificate({
-  "type": "service_account",
-  "project_id": "usertask-e1cc5",
-  "private_key_id": "e07682643b0f8e0831c199a1d15071b412d376cf",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCJ0Vke5mOwtYZc\nrXlfYeLb6G/FscWyOvejudsQSJBRENUYu7lRaCkswD/DS617kyxlcHgTfa/gknCQ\nqdNa4ZK9EQVKyy8hd2jumi17UrTeQLeaAvysStwqY4quUUhCySCFiCPUWnvNnIxH\n4i+ggzCFIGQd/5qgcOYOMs+ej82ikCobY2s39ajgm9oAfCsaqSaEzJ8OoU7cCRSV\n6grtXfPihLYQEXJoT2WqSEFsyyyTdsXZcdIvN+c5/nZmgOiAd6o4yricvqz3jMEm\nJBUP/KH9tHxTOnFpGQ+TJme7/yMHdNGlKaV2ObmfggxfEQXmPAfriqyIZCMxpjRa\n7P5rhZdZAgMBAAECggEAQumElo8POb14hcin1BqHdXONyPM95AHjN/fFl0tT3jgI\n7mA+Ynrq+tJAYwZ8LTJQbNPFSNlOKf+PbX02o7o/b1IzOpQZxurd5HKwwF5weDP9\nsGXg3Zne+SmpLGdEaUCTbKGjm7duwm5OYZw8uXbYeNo4IaR3I4yM9bnPudFh6pnT\nmZ4VNpi2KvFLTI/v33cuGibTJgcgvZLOqcnfTtCu+PiaK5R8bV68BQR07CqW5fw7\no93f+Ze5i0TgkLAWtWqfbl2Djgc8Gx7rkBMllBGfvcORHPVsqwc7KP5M8oYQFp4Z\n+2caWxOq4sPrO8vrumtxpG8XTzKkFQhrmGdkI0qhPQKBgQC/phdIfKhwzDF8fnVR\nBKAOPI/EexdudJ6sAqyrY8Dy/O28zmG4IyHo7ftW+8eDOUpnShO09v7Gqkh3Z4/X\n2DaLjO4STt8ndJFDjOo6ooP2Q4gjoCsItmquw+vPX+WBBzYFaGAB61J+Xov3L4qM\nzzCRfGbqqYLpLDXtKNZ5LjlnbwKBgQC4GAEWqny0nnLTww6ECUAztvXn9xl5gysS\nhg6QS7xBA6azlL4zkMGBXyt8uEkLo7t6UwOemoy6GhUMCoesfJKZD0fbTbrhlvFt\noNTSDv3JBp6BUzWxR+j42gfBjd6bJhTwtCRetjpl7oMxYy8qv4hL1YuHw35H3sSQ\n2ot/buJJtwKBgElJ1MGNmkR4cbwwB+ERqbuIAVqbz9wXkM4qv6lTHmhNvQRk0A3A\nsakHyQP8iNFvyToyo9KiWc/TMp8m5WUfc8xt+mTZ8JCADUUN0EzX9SrprFgjWhGc\n4LMwjS7idzuebFQpE/3n5cYZleDTN2KdoO8h6aF3bW6Jz51/7nSs7prVAoGBALGP\nXYVqHOvtI93B9j892PHIV3hL6gM8k4/DQ0rD8ahXiDMPlUCRL0LD82LRMIsMemgq\np4QTlwZs374EbgXdBVyh03HfkA/EEcrmZD7S/M8nFjywcEo0jK1xRifW2U2Vtn7P\nkYDUjJECMwGwo668nA5gwrrIwQU7BSad1Ayue44TAoGAXuTLsbClQfKcIipuW1qq\ncvfK5L/t0e++CKq9JOufQm5cl8/brb9oiwQ1k8CeOXRqeAeW79VVal/YI1IdpRMA\nx41U1MpbKa2tiHZlkcBowzB5kczrdzhRe5nLkgMsUxfYX/qZh5yQ1irC0kK13zmX\nmfawfsOfzWmO6XfV+0EhYmE=\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-tcyah@usertask-e1cc5.iam.gserviceaccount.com",
-  "client_id": "110942147879099976502",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-tcyah%40usertask-e1cc5.iam.gserviceaccount.com"
+  '''add your firebase credentials here'''
+#   "type":
+#   "project_id": 
+#   "private_key_id":
+#   "private_key": 
+#   "client_email": 
+#   "auth_uri": 
+#   "auth_provider_x509_cert_url": 
+#   "client_x509_cert_url": 
 })
 firebase_admin.initialize_app(cred, {
-    'databaseURL':'https://usertask-e1cc5.firebaseio.com/'
+    'databaseURL':'https://<your-database-name>.firebaseio.com/' #your database name
 })
 from datetime import date
 import logging,telegram
@@ -38,10 +37,10 @@ def start(bot,update):
     chat_id = str(update.message.chat_id)
     name=user.first_name
     print(chat_id)
-    ref = db.reference('/admin')
+    ref = db.reference('/admin') #database reference for admin's CHAT ID 
     a = ref.get()
     admin=a['chat_id']
-    if chat_id=='502639223' or chat_id=='670521605' or chat_id=='561114647' or chat_id==admin:
+    if chat_id==admin: #if admin. 
         custom_keyboard = [['ASSIGN NEW TASK'],
                            ['VIEW STATUS OF TASKS'],
                            ['CHANGE TIMINGS']]
@@ -53,7 +52,7 @@ def start(bot,update):
                         text="Hello *"+user.first_name+"*! What would you like to do ?",
                         reply_markup= reply_markup,parse_mode=telegram.ParseMode.MARKDOWN)
         return NEWTASK
-    else:
+    else: #else employee
         user = update.message.from_user
         chat_id = str(update.message.chat_id)
         ref = db.reference('/')
@@ -70,7 +69,7 @@ def separate_callback_data(data):
     """ Separate the callback data"""
     return data.split(";")
 
-def create_calendar(year=None, month=None):
+def create_calendar(year=None, month=None): #Displaying calender for Due Date. 
     now = datetime.datetime.now()
     if year is None:
         year = now.year
@@ -132,7 +131,7 @@ def process_calendar_selection(bot, update):
 
     return ret_data
 
-def morningreport(bot,update):
+def morningreport(bot,update): #Remainder
     user = update.message.from_user
     chat_id = update.message.chat_id
     markup = telegram.ReplyKeyboardRemove()
@@ -141,7 +140,7 @@ def morningreport(bot,update):
                      reply_markup=markup,parse_mode=telegram.ParseMode.MARKDOWN)
     return SAVEEMP1
 
-def eveningreport(bot,update):
+def eveningreport(bot,update): #Remainder
     user = update.message.from_user
     chat_id = update.message.chat_id
     markup = telegram.ReplyKeyboardRemove()
@@ -150,7 +149,7 @@ def eveningreport(bot,update):
                      reply_markup=markup,parse_mode=telegram.ParseMode.MARKDOWN)
     return SAVEEMP2
 
-def saveemp1(bot,update):
+def saveemp1(bot,update):#start for employer
     chat_id = update.message.chat_id
     update.message.reply_text("```   Saving...   ```\n",parse_mode=telegram.ParseMode.MARKDOWN)
     a = update.message.text
@@ -168,7 +167,7 @@ def saveemp1(bot,update):
         "Tap on */mytask* to see your task.\nTap on */cancel* to END conversation",parse_mode=telegram.ParseMode.MARKDOWN)
 
 
-def saveemp2(bot,update):
+def saveemp2(bot,update): #start for employer
     chat_id = update.message.chat_id
     update.message.reply_text("```   Saving...   ```\n",parse_mode=telegram.ParseMode.MARKDOWN)
     a = update.message.text
@@ -185,13 +184,13 @@ def saveemp2(bot,update):
         "Tap on */mytask* to see your task.\nTap on */cancel* to END conversation",parse_mode=telegram.ParseMode.MARKDOWN)
 
 
-def change(bot,update):
+def change(bot,update): #changing admin
     chat_id = update.message.chat_id
     bot.send_message(chat_id=chat_id,
                      text="Please type and send the *CHAT-ID* of your *TEAM LEADER* \n Example: 123456789",parse_mode=telegram.ParseMode.MARKDOWN)
     return CHANGEEMP
 
-def mytask(bot,update):
+def mytask(bot,update): #details for employer 
     chat_id = update.message.chat_id
     user_data = update.message.text
     update.message.reply_text(
@@ -457,7 +456,7 @@ def error(update, context):
 
 
 def main():
-    updater = Updater("991304503:AAFBC7aqQow1pqjfbHmZRazqRV-Q0Sq_uJk")
+    updater = Updater("<token>") ###################### Add your telegram token here. ##############################
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("calendar", calendar_handler))
     dp.add_handler(CallbackQueryHandler(inline_handler))
