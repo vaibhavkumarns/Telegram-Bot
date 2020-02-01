@@ -1,0 +1,106 @@
+{
+  "01-02-2020" : {
+    "assigned_by" : {
+      "assigned_by" : "<name of employer>"
+    },
+    "assigned_date" : {
+      "assigned_date" : "01-02-2020"
+    },
+    "assigned_to" : {
+      "assigned_to" : "EMPLOYEE 3"
+    },
+    "due_date" : {
+      "due_date" : "04-02-2020"
+    },
+    "employee" : {
+      "employeename" : "<name of employee>",
+      "morningreport" : {
+        "morningreport" : "Working on documentation. We'll finish it by end of the day",
+        "mortime" : {
+          "mortime" : "04:51 PM"
+        }
+      }
+    },
+    "task" : {
+      "task" : "Work on documentation"
+    }
+  },
+    "1234567" : {
+      "assigned_by" : {
+        "name" : "Vaibhav"
+      },
+      "assigned_on" : {
+        "date" : "20-11-2019"
+      },
+      "due_date" : {
+        "date" : "26-11-2019"
+      },
+      "task" : {
+        "task" : "help everyone"
+      }
+    }
+  },
+    "assigned_by" : {
+      "assigned_by" : "<name of employer>"
+    },
+    "assigned_date" : {
+      "assigned_date" : "15-10-2019"
+    },
+    "assigned_to" : {
+      "assigned_to" : "EMPLOYEE 3"
+    },
+    "due_date" : {
+      "due_date" : "19-10-2019"
+    },
+    "employee" : {
+      "employeename" : "Vaibhavkumar"
+    },
+    "task" : {
+      "task" : "Work on telegram chatbot"
+    }
+  },
+  "16-10-2019" : {
+    "assigned_by" : {
+      "assigned_by" : "<name of employer>"
+    },
+    "assigned_date" : {
+      "assigned_date" : "16-10-2019"
+    },
+    "assigned_to" : {
+      "assigned_to" : "EMPLOYEE 2"
+    },
+    "due_date" : {
+      "due_date" : "19-10-2019"
+    },
+    "employee" : {
+      "employeename" : "<name of employee>",
+      "morningreport" : {
+        "morningreport" : "Working on documentation",
+        "mortime" : {
+          "mortime" : "02:54 PM"
+        }
+      }
+    },
+    "task" : {
+      "task" : "Work on chatbot."
+    }
+  },
+    "assigned_by" : {
+      "assigned_by" : "<name of employer>"
+    },
+    "employee" : {
+      "employeename" : "<name of employee>"
+    }
+  },
+  "admin" : {
+    "chat_id" : "999999"
+  },
+  "office_time" : {
+    "close" : {
+      "close" : "11:53"
+    },
+    "start" : {
+      "start" : "11:52"
+    }
+  }
+}
