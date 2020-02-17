@@ -1,9 +1,9 @@
 import schedule,time,requests,firebase_admin,os,logging
 from telegram.ext import Updater
 from firebase_admin import credentials,db
-cred = credentials.Certificate('uuu.json')
+cred = credentials.Certificate('.json-name')
 firebase_admin.initialize_app(cred, {
-    'databaseURL':'https://usertask-e1cc5.firebaseio.com/'
+    'databaseURL':'your db URL'
 })
 ref = db.reference('/office-time')
 a=ref.get()
@@ -12,7 +12,7 @@ close=a['close']
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
-TOKEN = '910332789:AAElxdJpPZTRp4LmA1-bE8GfSr0qL4EtVHo'
+TOKEN = 'your token here'
 
 def run(updater):
     PORT = int(os.environ.get("PORT", "8443"))
@@ -24,7 +24,7 @@ def run(updater):
 
 
 def morningreport():
-    bot_chatID = ['964783366']
+    bot_chatID = ['your chat id']
     for i in bot_chatID:
         send_text = 'https://api.telegram.org/bot' + TOKEN + '/sendMessage?chat_id=' + str(
             i) + '&parse_mode=Markdown&text=' + "Good Morning, \n Tap on /morningreport to continue."
